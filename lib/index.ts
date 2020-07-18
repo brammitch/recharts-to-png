@@ -1,15 +1,15 @@
+import ReactDOM from 'react-dom';
 import {
   AreaChart,
-  PieChart,
-  RadarChart,
-  ScatterChart,
   BarChart,
   ComposedChart,
   LineChart,
+  PieChart,
+  RadarChart,
   RadialBarChart,
+  ScatterChart,
   Treemap,
 } from 'recharts';
-import ReactDOM from 'react-dom';
 
 export type RechartsChart =
   | AreaChart
