@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 import ReactDOM from 'react-dom';
 
-export type RechartChart =
+export type RechartsChart =
   | AreaChart
   | BarChart
   | ComposedChart
@@ -50,7 +50,7 @@ function svgToPng(svg: Node, width: number, height: number): Promise<string> {
   });
 }
 
-export async function getPngData(chart: RechartChart, height: number, width: number) {
+export async function getPngData(chart: RechartsChart, height: number, width: number) {
   const chartSVG = (ReactDOM.findDOMNode(chart) as Element)?.children?.[0];
 
   return await svgToPng(chartSVG, width, height);
