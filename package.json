@@ -2,6 +2,11 @@
   "name": "recharts-to-png",
   "version": "0.1.0",
   "description": "This package converts a Recharts chart to a png.",
+  "homepage": "https://github.com/brammitch/recharts-to-png#readme",
+  "repsitory": {
+    "type": "git",
+    "url": "https://github.com/brammitch/recharts-to-png"
+  },
   "files": [
     "dist"
   ],
