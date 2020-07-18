@@ -1,0 +1,39 @@
+{
+  "name": "recharts-to-png",
+  "version": "0.1.0",
+  "description": "This package converts a Recharts chart to a png.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "tsc": "node_modules/typescript/bin/tsc && cp dist/index.d.ts index.d.ts"
+  },
+  "keywords": [
+    "recharts",
+    "png",
+    "save",
+    "react",
+    "typescript"
+  ],
+  "author": "Brandon M. Mitchell",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@types/recharts": "^1.8.14",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
