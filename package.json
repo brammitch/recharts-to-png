@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/brammitch/recharts-to-png"
   },
+  "bugs": {
+    "url": "https://github.com/brammitch/recharts-to-png/issues"
+  },
   "files": [
     "dist"
   ],
@@ -19,8 +22,11 @@
   },
   "keywords": [
     "recharts",
-    "png",
+    "svg",
+    "download",
+    "image",
     "save",
+    "png",
     "react",
     "typescript"
   ],
