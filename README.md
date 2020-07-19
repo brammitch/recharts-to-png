@@ -19,8 +19,47 @@ npm i -S recharts-to-png
 
 ### Usage
 
-```
-import { getPngData } from 'recharts-to-png';
+```javascript
+import { getPngData } from "recharts-to-png";
 
-const pngData = await getPngData(chart, height, width);
+...
+
+export const App = () => {
+  // The chart that we want to download the PNG for.
+  const [chart, setChart] = React.useState();
+
+  const handleDownload = React.useCallback(async () => {
+    // Send the chart to getPngData
+    const pngData = await getPngData(chart);
+    // Use FileSaver to download the PNG
+    FileSaver.saveAs(pngData, "test.png");
+  }, [chart]);
+
+  const data = [...];
+
+  return (
+    <LineChart
+      ref={ref => setChart(ref)} // Save the ref of the chart
+      data={data}
+      height={300}
+      width={600}
+      margin={{ top: 5, right: 30, left: 20, bottom: 25 }}
+    >
+      <XAxis dataKey="name" />
+      <YAxis />
+      <CartesianGrid strokeDasharray="3 3" />
+      <Tooltip />
+      <Legend />
+      <Line
+        type="monotone"
+        dataKey="pv"
+        stroke="#8884d8"
+        activeDot={{ r: 8 }}
+      />
+      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    </LineChart>
+  );
+};
+
+export default App;
 ```
