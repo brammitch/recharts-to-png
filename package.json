@@ -3,7 +3,7 @@
   "version": "0.4.1",
   "description": "This package converts a Recharts chart to a png.",
   "homepage": "https://github.com/brammitch/recharts-to-png#readme",
-  "repsitory": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/brammitch/recharts-to-png"
   },
@@ -45,7 +45,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
