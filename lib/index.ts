@@ -22,7 +22,14 @@ export type RechartsChart =
   | ScatterChart
   | Treemap;
 
-function svgToPng(svg: Node, width: number, height: number): Promise<string> {
+/**
+ * Converts a SVG element to a PNG URL string
+ * @param svg The SVG from a Recharts chart
+ */
+function svgToPng(svg: SVGSVGElement): Promise<string> {
+  const height = svg.height.baseVal.value;
+  const width = svg.width.baseVal.value;
+
   return new Promise((resolve, reject) => {
     const canvas = document.createElement('canvas');
     canvas.width = width;
@@ -50,8 +57,12 @@ function svgToPng(svg: Node, width: number, height: number): Promise<string> {
   });
 }
 
-export async function getPngData(chart: RechartsChart, height: number, width: number) {
-  const chartSVG = (ReactDOM.findDOMNode(chart) as Element)?.children?.[0];
+/**
+ * Returns a PNG URL string
+ * @param chart - The Rechart chart to generate the PNG for
+ */
+export async function getPngData(chart: RechartsChart): Promise<string> {
+  const chartSVG = (ReactDOM.findDOMNode(chart) as Element)?.children?.[0] as SVGSVGElement;
 
-  return await svgToPng(chartSVG, width, height);
+  return await svgToPng(chartSVG);
 }
