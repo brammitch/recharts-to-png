@@ -14,10 +14,20 @@ See an [example](https://csb-dyy8q.netlify.app/) of using recharts-to-png with [
 ### Install
 
 ```
-npm i -S recharts-to-png
+npm install recharts-to-png
 ```
 
 ### Usage
+
+```javascript
+await getPngData(chart, fill);
+```
+
+chart: RechartsChart - AreaChart | BarChart | PieChart | etc.
+
+fill: background color (optional) - string | CanvasGradient | CanvasPattern
+
+### Example
 
 ```javascript
 import { getPngData } from "recharts-to-png";
@@ -31,6 +41,8 @@ export const App = () => {
   const handleDownload = React.useCallback(async () => {
     // Send the chart to getPngData
     const pngData = await getPngData(chart);
+    // Can also pass an optional fill parameter for the background color
+    // const pngData = await getPngData(chart, '#000000');
     // Use FileSaver to download the PNG
     FileSaver.saveAs(pngData, "test.png");
   }, [chart]);
