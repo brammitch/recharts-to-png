@@ -7,9 +7,9 @@ Converts a [Recharts](<[https://github.com/recharts/recharts](https://github.com
 
 Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom).
 
-### Example
+### Demo
 
-See an [example](https://csb-dyy8q.netlify.app/) of using recharts-to-png with [FileSaver](https://www.npmjs.com/package/file-saver).
+See a [demo](https://csb-dyy8q.netlify.app/) using recharts-to-png alongside [FileSaver](https://www.npmjs.com/package/file-saver).
 
 ### Install
 
