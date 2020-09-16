@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <LineChart
-        ref={(ref): void => setChart(ref)} // Set target element
+        ref={(ref) => setChart(ref)} // Set target element
         data={data}
         height={300}
         width={600}
