@@ -24,6 +24,12 @@ npm install recharts-to-png
 await getPngData(chart);
 ```
 
+Allows all [html2canvas configuration options](https://html2canvas.hertzen.com/configuration) to be passed:
+
+```javascript
+await getPngData(chart, options);
+```
+
 ### Example
 
 ```javascript
