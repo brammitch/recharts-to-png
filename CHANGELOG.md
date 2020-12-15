@@ -12,6 +12,8 @@ Move _react_ and _react-dom_ to peerDependencies.
 
 - **lib:** :label: fix types ([2354a6e](https://github.com/brammitch/recharts-to-png/commit/2354a6e32174f1ca19361a8225c4cbb01abbb0bf)), closes [#18](https://github.com/brammitch/recharts-to-png/issues/18)
 
-# Changelog
+### [0.8.0](https://github.com/brammitch/recharts-to-png/compare/v0.7.0...v0.8.0) (2020-12-15)
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+### Bug Fixes
+
+- **lib:** :label: added useRechartToPng hook for compatibility with React 17 ([8158f16](https://github.com/brammitch/recharts-to-png/commit/5e08c261c18f13c31914797d9a512b43eba4ea1f)), closes [#6](https://github.com/brammitch/recharts-to-png/issues/6)
