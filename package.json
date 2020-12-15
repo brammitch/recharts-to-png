@@ -33,7 +33,7 @@
   "author": "Brandon M. Mitchell",
   "license": "MIT",
   "devDependencies": {
-    "@types/html2canvas": "0.0.35",
+    "@types/html2canvas": "0.0.36",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/recharts": "^1.8.14",
