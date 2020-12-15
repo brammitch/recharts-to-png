@@ -1,4 +1,5 @@
 import html2canvas from 'html2canvas';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   AreaChart,
@@ -9,7 +10,7 @@ import {
   RadarChart,
   RadialBarChart,
   ScatterChart,
-  Treemap,
+  Treemap
 } from 'recharts';
 
 export type RechartsChart =
@@ -24,8 +25,10 @@ export type RechartsChart =
   | Treemap;
 
 /**
+ * @deprecated Not compatible with React 17. Use the useRechartRef hook instead.
  * Returns a PNG URL string
  * @param instance - The Rechart component to generate the PNG for
+ * @param options - Html2Canvas formatting options
  */
 export async function getPngData(
   instance: Element | React.Component | RechartsChart,
@@ -38,4 +41,22 @@ export async function getPngData(
   );
 
   return pngData;
+}
+
+/**
+ * Returns a PNG URL string
+ * @param options - Html2Canvas formatting options
+ */
+export function useRechartToPng(options: Html2Canvas.Html2CanvasOptions = {}) {
+  const [png, setPng] = React.useState<any>(null);
+
+  const ref = React.useCallback(async (node: any) => {
+    if (node !== null && node?.container) {
+      const data = await html2canvas(node.container as HTMLElement, options).then((canvas) => canvas.toDataURL('image/png', 1.0));
+      setPng(data);
+    }
+
+  }, [options])
+
+  return [png, ref];
 }

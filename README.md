@@ -3,21 +3,45 @@
 
 # recharts-to-png
 
+_For Recharts 1.X_
+
 Uses [html2canvas](https://github.com/niklasvh/html2canvas) to convert a [Recharts](https://github.com/recharts/recharts) chart to PNG.
 
 Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom).
 
-### Demo
-
-See a [demo](https://csb-dyy8q.netlify.app/) using recharts-to-png alongside [FileSaver](https://www.npmjs.com/package/file-saver).
-
-### Install
+## Install
 
 ```
 npm install recharts-to-png
 ```
 
-### Usage
+## Hook
+
+The recommended way of using `recharts-to-png`. It is compatible with React 16.8+, does not rely on `findDOMNode`, and is required for React 17:
+
+```javascript
+import { useRechartToPng } from "recharts-to-png";
+
+const [png, ref] = useRechartToPng(options?);
+
+const handleDownload = React.useCallback(async () => {
+  FileSaver.saveAs(png, "myChart.png");
+}, [png]);
+
+return (
+  <LineChart ref={ref} ... />
+)
+```
+
+# Deprecated
+
+The original `getPngData` function this library offered does not work with React 17 (see [#6](https://github.com/brammitch/recharts-to-png/issues/6)). This section is still included for backwards compatibility, but will probably be removed at some point along with `getPngData`.
+
+#### Demo
+
+See a [demo](https://csb-dyy8q.netlify.app/) using recharts-to-png alongside [FileSaver](https://www.npmjs.com/package/file-saver).
+
+#### Usage
 
 ```javascript
 // chart: Element | React.Component | AreaChart | BarChart | PieChart | etc.
@@ -30,7 +54,7 @@ Allows all [html2canvas configuration options](https://html2canvas.hertzen.com/c
 await getPngData(chart, options);
 ```
 
-### Example
+#### Example
 
 ```javascript
 function App() {
