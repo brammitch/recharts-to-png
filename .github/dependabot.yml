@@ -1,0 +1,10 @@
+version: 2
+updates:
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "brammitch"
+    open-pull-requests-limit: 10
