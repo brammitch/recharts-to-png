@@ -25,14 +25,14 @@ export type RechartsChart =
   | Treemap;
 
 /**
- * @deprecated Not compatible with React 17. Use the useRechartRef hook instead.
+ * @deprecated Not compatible with React 17. Use the useRechartToPng hook instead.
  * Returns a PNG URL string
  * @param instance - The Rechart component to generate the PNG for
  * @param options - Html2Canvas formatting options
  */
 export async function getPngData(
   instance: Element | React.Component | RechartsChart,
-  options?: Html2Canvas.Html2CanvasOptions
+  options?: Html2CanvasOptions
 ): Promise<string> {
   const element = ReactDOM.findDOMNode(instance) as HTMLElement;
 
@@ -47,8 +47,8 @@ export async function getPngData(
  * Returns a PNG URL string
  * @param options - Html2Canvas formatting options
  */
-export function useRechartToPng(options: Html2Canvas.Html2CanvasOptions = {}) {
-  const [png, setPng] = React.useState<any>(null);
+export function useRechartToPng(options: Html2CanvasOptions = {}): (string | ((node: any) => Promise<void>) | null)[] {
+  const [png, setPng] = React.useState<string | null>(null);
 
   const ref = React.useCallback(async (node: any) => {
     if (node !== null && node?.container) {
