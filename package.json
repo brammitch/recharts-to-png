@@ -16,6 +16,7 @@
     "dist"
   ],
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "recharts",
@@ -28,57 +29,35 @@
     "typescript"
   ],
   "scripts": {
-    "tsc": "node_modules/typescript/bin/tsc && cp dist/index.d.ts index.d.ts",
     "clean": "rimraf dist",
-    "build": "clean && tsc -c tsconfig.json",
-    "postversion": "git push && git push --tags"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "scope-case": [
-        2,
-        "always",
-        [
-          "lower-case",
-          "pascal-case",
-          "camel-case"
-        ]
-      ],
-      "scope-empty": [
-        2,
-        "never"
-      ],
-      "scope-enum": [
-        2,
-        "always",
-        [
-          "lib",
-          "deps",
-          "release",
-          "other"
-        ]
-      ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "build": "npm run clean && npx rollup -c rollup.config.js",
+    "release": "standard-version",
+    "postversion": "git push && git push --tags",
+    "test": "jest",
+    "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
+    "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
+    "lint:check": "eslint . --ext .js,.ts,.tsx --color",
+    "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix"
   },
   "peerDependencies": {
-    "recharts": "^1.8.0"
+    "recharts": "^1.8.0",
+    "react": "^16.8.3 || ^17.0.0-0",
+    "react-dom": "^16.8.3 || ^17.0.0-0"
   },
   "dependencies": {
-    "html2canvas": "^1.0.0-rc.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "html2canvas": "^1.0.0-rc.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@testing-library/react": "^11.2.2",
+    "@types/file-saver": "^2.0.1",
     "@types/html2canvas": "0.0.36",
     "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
@@ -86,14 +65,29 @@
     "@types/recharts": "^1.8.18",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
+    "babel-jest": "^26.6.3",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-saver": "^2.0.5",
     "husky": "^4.3.6",
     "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
     "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "recharts": "^1.8.5",
+    "rollup": "^2.35.1",
+    "rollup-plugin-typescript2": "^0.29.0",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
