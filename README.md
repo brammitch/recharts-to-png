@@ -22,15 +22,19 @@ The recommended way of using `recharts-to-png`. It is compatible with React 16.8
 ```javascript
 import { useRechartToPng } from "recharts-to-png";
 
-const [png, ref] = useRechartToPng(options?);
+function MyComponent() {
+  // Attach ref to a Recharts component, and the png will be returned
+  // Also accepts an optional argument for Html2Canvas options: useRechartToPng(options)
+  const [png, ref] = useRechartToPng();
 
-const handleDownload = React.useCallback(async () => {
-  FileSaver.saveAs(png, "myChart.png");
-}, [png]);
+  const handleDownload = React.useCallback(async () => {
+    FileSaver.saveAs(png, "myChart.png");
+  }, [png]);
 
-return (
-  <LineChart ref={ref} ... />
-)
+  return (
+    <LineChart ref={ref} ... />
+  )
+}
 ```
 
 # Deprecated
