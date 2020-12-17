@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.2](https://github.com/brammitch/recharts-to-png/compare/v0.8.1...v0.8.2) (2020-12-17)
+
+
+### Bug Fixes
+
+* **lib:** :label: update types to match current version ([4c8796c](https://github.com/brammitch/recharts-to-png/commit/4c8796ca80a9135dc52c0eed2fbe4c9d7c9bbe56))
+
 ### [0.8.1](https://github.com/brammitch/recharts-to-png/compare/v0.8.1-0...v0.8.1) (2020-12-15)
 
 Move _react_ and _react-dom_ to peerDependencies.
