@@ -34,6 +34,7 @@
     "release": "standard-version",
     "postversion": "git push && git push --tags",
     "test": "jest",
+    "coverage": "jest --coverage",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
