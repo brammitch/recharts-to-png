@@ -1,4 +1,5 @@
 [![npm](https://img.shields.io/npm/v/recharts-to-png)](https://www.npmjs.com/package/recharts-to-png)
+[![Build Status](https://travis-ci.com/brammitch/recharts-to-png.svg?branch=master)](https://travis-ci.com/brammitch/recharts-to-png)
 [![GitHub](https://img.shields.io/github/license/brammitch/recharts-to-png)](LICENSE)
 
 # recharts-to-png
