@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import FileSaver from 'file-saver';
 import React from 'react';
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
@@ -559,11 +559,11 @@ describe('useRechartToPng', () => {
     // });
   });
 
-  test('Downloads PNG', () => {
-    const { getByTestId } = render(<App />);
-    const downloadButton = getByTestId('download-button');
+  test('Downloads PNG', async () => {
+    render(<App />);
+    const downloadButton = await screen.findByTestId('download-button');
     fireEvent.click(downloadButton);
-    expect(FileSaver.saveAs).toHaveBeenCalledWith('', 'test.png');
+    waitFor(() => expect(FileSaver.saveAs).toHaveBeenCalledWith('', 'test.png'));
   });
 
   afterAll(() => jest.clearAllMocks());
