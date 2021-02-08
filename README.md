@@ -4,7 +4,7 @@
 
 # recharts-to-png
 
-_For Recharts 1.X_
+Made for Recharts 1. Compatibility with Recharts 2 not yet verified. See [#64](https://github.com/brammitch/recharts-to-png/issues/64#issue-803586805) for more information.
 
 Uses [html2canvas](https://github.com/niklasvh/html2canvas) to convert a [Recharts](https://github.com/recharts/recharts) chart to PNG.
 
