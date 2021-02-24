@@ -41,9 +41,9 @@
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix"
   },
   "peerDependencies": {
-    "recharts": "^1.8.0",
     "react": "^16.8.3 || ^17.0.0-0",
-    "react-dom": "^16.8.3 || ^17.0.0-0"
+    "react-dom": "^16.8.3 || ^17.0.0-0",
+    "recharts": "^1.8.0"
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.0"
