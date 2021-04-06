@@ -4,20 +4,24 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.0.0](https://github.com/brammitch/recharts-to-png/compare/v0.8.4...v1.0.0) (2021-04-06)
 
-### [0.8.4](https://github.com/brammitch/recharts-to-png/compare/v0.8.3...v0.8.4) (2021-04-05)
+### Release
 
-### [0.8.3](https://github.com/brammitch/recharts-to-png/compare/v0.8.2...v0.8.3) (2021-04-05)
+- :shipit: Verified support for recharts v2; still compatible with v1
+
+### Breaking
+
+- :warning: After being deprecated in previous releases, `getPngData` has been removed
+- If you haven't already migrated to the `useRechartToPng` hook, check the [README](https://github.com/brammitch/recharts-to-png#usage) for usage instructions.
 
 ### [0.8.2](https://github.com/brammitch/recharts-to-png/compare/v0.8.1...v0.8.2) (2020-12-17)
 
-
 ### Bug Fixes
 
-* **lib:** :label: update types to match current version ([4c8796c](https://github.com/brammitch/recharts-to-png/commit/4c8796ca80a9135dc52c0eed2fbe4c9d7c9bbe56))
+- **lib:** :label: update types to match current version ([4c8796c](https://github.com/brammitch/recharts-to-png/commit/4c8796ca80a9135dc52c0eed2fbe4c9d7c9bbe56))
 
 ### [0.8.1](https://github.com/brammitch/recharts-to-png/compare/v0.8.1-0...v0.8.1) (2020-12-15)
 
-Move _react_ and _react-dom_ to peerDependencies.
+- **deps:** Move _react_ and _react-dom_ to peerDependencies
 
 ### [0.8.1-0](https://github.com/brammitch/recharts-to-png/compare/v0.8.0...v0.8.1-0) (2020-12-15)
 
