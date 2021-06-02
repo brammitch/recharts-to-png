@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/brammitch/recharts-to-png/compare/v1.0.0...v1.0.1) (2021-06-02)
+
+
+### Bug Fixes
+
+* **lib:** :bug: make options optional ([d655b3f](https://github.com/brammitch/recharts-to-png/commit/d655b3f75b4d49c6403bdb9649d5ce2d265283cc))
+
 ## [1.0.0](https://github.com/brammitch/recharts-to-png/compare/v0.8.4...v1.0.0) (2021-04-06)
 
 ### Release
