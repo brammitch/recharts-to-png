@@ -24,19 +24,22 @@ Compatible with React ^16.8.0:
 
 ### useCurrentPng
 
-The PNG is provided by `useCurrentPng`, a hook that returns a tuple. The first parameter is a promise that will return a string if the PNG is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target Recharts component, and `isLoading`, which is optional and changes state from false to true while the PNG is being generated and downloaded.
+`useCurrentPng` is a React hook that returns a tuple. The first parameter is a promise that will return a string if the PNG is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target Recharts component, and `isLoading`, which is optional and changes state from false to true while the PNG is being generated and downloaded.
 
 ```javascript
 function MyApp(props) {
   // useCurrentPng usage (isLoading is optional)
   const [getPng, { ref, isLoading }] = useCurrentPng();
 
+  // Can also pass in options for html2canvas
+  // const [getPng, { ref }] = useCurrentPng({ backgroundColor: '#000' });
+
   const handleDownload = useCallback(async () => {
-    // Verify that png is not undefined
     const png = await getPng();
 
-    // Download with FileSaver
+    // Verify that png is not undefined
     if (png) {
+      // Download with FileSaver
       FileSaver.saveAs(png, 'myChart.png');
     }
   }, [getPng]);
@@ -68,8 +71,6 @@ function MyApp(props) {
 This function has been deprecated and is no longer recommended for use due to poor performance.
 
 ```javascript
-import { useRechartToPng } from "recharts-to-png";
-
 function MyComponent() {
   // Attach ref to a Recharts component, and the png will be returned
   // Also accepts an optional argument for Html2Canvas options: useRechartToPng(options)
