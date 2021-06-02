@@ -6,7 +6,7 @@
 
 Uses [html2canvas](https://github.com/niklasvh/html2canvas) to convert a [Recharts](https://github.com/recharts/recharts) chart to PNG.
 
-Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom).
+Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom). Special thanks to [HarmNullix](https://github.com/brammitch/recharts-to-png/issues/160#issuecomment-852812993) for helping to improve the performance of this library.
 
 ## Install
 
@@ -21,6 +21,51 @@ See a [demo](https://csb-dyy8q.netlify.app/) using recharts-to-png alongside [fi
 ## Usage
 
 Compatible with React ^16.8.0:
+
+### useCurrentPng
+
+The PNG is provided by `useCurrentPng`, a hook that returns a tuple. The first parameter is a promise that will return a string if the PNG is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target Recharts component, and `isLoading`, which is optional and changes state from false to true while the PNG is being generated and downloaded.
+
+```javascript
+function MyApp(props) {
+  // useCurrentPng usage (isLoading is optional)
+  const [getPng, { ref, isLoading }] = useCurrentPng();
+
+  const handleDownload = useCallback(async () => {
+    // Verify that png is not undefined
+    const png = await getPng();
+
+    // Download with FileSaver
+    if (png) {
+      FileSaver.saveAs(png, 'myChart.png');
+    }
+  }, [getPng]);
+
+  return (
+    <>
+      <ComposedChart data={props.data} ref={ref}>
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <CartesianGrid stroke="#f5f5f5" />
+        <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
+        <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+        <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+        <Brush dataKey="name" height={30} stroke="#8884d8" />
+      </ComposedChart>
+      <br/>
+      <button onClick={handleDownload}>
+        {isLoading ? 'Downloading...' : 'Download Chart'}
+      </button>
+    </>
+  );
+
+```
+
+### useRechartToPng
+
+This function has been deprecated and is no longer recommended for use due to poor performance.
 
 ```javascript
 import { useRechartToPng } from "recharts-to-png";
