@@ -8,7 +8,7 @@ import { useCallback, useRef, useState } from 'react';
  * @deprecated Prefer useCurrentPng for faster performance
  */
 export function useRechartToPng(
-  options: Html2CanvasOptions
+  options?: Html2CanvasOptions
 ): [string, (node: unknown) => Promise<void>] {
   const [png, setPng] = useState<string>('');
 
@@ -39,7 +39,7 @@ export type UseCurrentPng = [
 /**
  * @param options - optional Html2CanvasOptions object
  */
-export function useCurrentPng(options: Html2CanvasOptions = { logging: false }): UseCurrentPng {
+export function useCurrentPng(options?: Html2CanvasOptions): UseCurrentPng {
   const ref = useRef<any>();
   const [isLoading, setIsLoading] = useState(false);
 
