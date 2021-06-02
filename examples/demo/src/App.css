@@ -1,0 +1,26 @@
+h4 {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.area-chart {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.pie-chart {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.composed-chart {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+}
