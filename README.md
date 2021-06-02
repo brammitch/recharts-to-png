@@ -16,7 +16,11 @@ npm install recharts-to-png
 
 ## Demo
 
-See a [demo](https://csb-dyy8q.netlify.app/) using recharts-to-png alongside [file-saver](https://www.npmjs.com/package/file-saver).
+See the demo [here](https://csb-dyy8q.netlify.app/). It implements _useCurrentPng_ with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
+
+Source:
+
+[![Edit recharts-to-png](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recharts-to-png-dyy8q?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Usage
 
