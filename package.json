@@ -63,7 +63,7 @@
     "@types/file-saver": "^2.0.1",
     "@types/html2canvas": "0.0.36",
     "@types/jest": "^26.0.22",
-    "@types/node": "^12.20.14",
+    "@types/node": "^16.0.0",
     "@types/random-number": "*",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
