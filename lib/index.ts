@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import html2canvas from 'html2canvas';
+import html2canvas, { Options } from 'html2canvas';
 import { useCallback, useRef, useState } from 'react';
 
 /**
- * @param options - optional Html2CanvasOptions object
+ * @param options - optional html2canvas Options object
  *
  * @deprecated Prefer useCurrentPng for faster performance
  */
 export function useRechartToPng(
-  options?: Html2CanvasOptions
+  options?: Partial<Options>
 ): [string, (node: unknown) => Promise<void>] {
   const [png, setPng] = useState<string>('');
 
@@ -37,9 +37,9 @@ export type UseCurrentPng = [
 ];
 
 /**
- * @param options - optional Html2CanvasOptions object
+ * @param options - optional html2canvas Options object
  */
-export function useCurrentPng(options?: Html2CanvasOptions): UseCurrentPng {
+export function useCurrentPng(options?: Partial<Options>): UseCurrentPng {
   const ref = useRef<any>();
   const [isLoading, setIsLoading] = useState(false);
 
