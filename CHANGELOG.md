@@ -4,9 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.2](https://github.com/brammitch/recharts-to-png/compare/v1.1.1...v1.1.2) (2021-12-29)
 
+- **deps:** Upgrade html2canvas to ^1.2.0; fixes [#317](https://github.com/brammitch/recharts-to-png/issues/317)
+
 ### [1.1.1](https://github.com/brammitch/recharts-to-png/compare/v1.1.0...v1.1.1) (2021-07-14)
 
-- **deps:** Upgrade html2Canvas to v1; remove @types/html2Canvas
+- **deps:** Upgrade html2canvas to v1; remove @types/html2canvas
 
 ## [1.1.0](https://github.com/brammitch/recharts-to-png/compare/v1.0.1...v1.1.0) (2021-06-02)
 
