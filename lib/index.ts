@@ -2,32 +2,6 @@
 import html2canvas, { Options } from 'html2canvas';
 import { useCallback, useRef, useState } from 'react';
 
-/**
- * @param options - optional html2canvas Options object
- *
- * @deprecated Prefer useCurrentPng for faster performance
- */
-export function useRechartToPng(
-  options?: Partial<Options>
-): [string, (node: unknown) => Promise<void>] {
-  const [png, setPng] = useState<string>('');
-
-  const ref = useCallback(
-    async (node: any) => {
-      if (node !== null && node?.container) {
-        const data = await html2canvas(node.container as HTMLElement, {
-          logging: false,
-          ...options,
-        }).then((canvas) => canvas.toDataURL('image/png', 1.0));
-        setPng(data);
-      }
-    },
-    [options]
-  );
-
-  return [png, ref];
-}
-
 export type UseCurrentPng = [
   () => Promise<string | undefined>,
   {
