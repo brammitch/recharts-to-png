@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.0](https://github.com/brammitch/recharts-to-png/compare/v1.1.2...v2.0.0) (2022-01-06)
+
+### Breaking
+
+- :warning: Removed deprecated function `useRechartToPng` in favor of `useCurrentPng`
+
 ### [1.1.2](https://github.com/brammitch/recharts-to-png/compare/v1.1.1...v1.1.2) (2021-12-29)
 
 - **deps:** Upgrade html2canvas to ^1.2.0; fixes [#317](https://github.com/brammitch/recharts-to-png/issues/317)
@@ -14,7 +20,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Release
 
-- Add _useCurrentPng_ hook; see [PR #181](https://github.com/brammitch/recharts-to-png/pull/181)
+- Add `useCurrentPng` hook; see [PR #181](https://github.com/brammitch/recharts-to-png/pull/181)
 
 ### [1.0.1](https://github.com/brammitch/recharts-to-png/compare/v1.0.0...v1.0.1) (2021-06-02)
 
@@ -41,7 +47,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.8.1](https://github.com/brammitch/recharts-to-png/compare/v0.8.1-0...v0.8.1) (2020-12-15)
 
-- **deps:** Move _react_ and _react-dom_ to peerDependencies
+- **deps:** Move `react` and `react-dom` to peerDependencies
 
 ### [0.8.1-0](https://github.com/brammitch/recharts-to-png/compare/v0.8.0...v0.8.1-0) (2020-12-15)
 
@@ -53,4 +59,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-- **lib:** :label: added useRechartToPng hook for compatibility with React 17 ([8158f16](https://github.com/brammitch/recharts-to-png/commit/5e08c261c18f13c31914797d9a512b43eba4ea1f)), closes [#6](https://github.com/brammitch/recharts-to-png/issues/6)
+- **lib:** :label: added `useRechartToPng` hook for compatibility with React 17 ([8158f16](https://github.com/brammitch/recharts-to-png/commit/5e08c261c18f13c31914797d9a512b43eba4ea1f)), closes [#6](https://github.com/brammitch/recharts-to-png/issues/6)
