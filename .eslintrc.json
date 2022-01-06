@@ -19,7 +19,7 @@
     },
     "project": ["./tsconfig.json", "./*.json", "./*.config.js", "**/__tests__/*"]
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect"
