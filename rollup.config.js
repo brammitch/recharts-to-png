@@ -16,10 +16,6 @@ const plugins = [
     babelHelpers: 'runtime',
     extensions: ['.js', '.jsx', '.es6', '.es', '.mjs'],
   }),
-  // nodeResolve({
-  //   browser: true,
-  //   extensions: ['.ts', '.tsx', '.js'],
-  // }),
   typescript({
     tsconfig: './tsconfig.json',
     typescript: require('typescript'),

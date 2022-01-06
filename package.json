@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && npx rollup -c rollup.config.js",
+    "build": "npm run clean && npx rollup -c rollup.config.js && cp ./dist/index.d.ts ./index.d.ts",
     "release": "standard-version",
     "postversion": "git push && git push --tags",
     "test": "jest",
@@ -40,7 +40,8 @@
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix",
     "prepare": "husky install",
-    "watch": "npx rollup -c rollup.config.js -w"
+    "watch": "npx rollup -c rollup.config.js -w",
+    "demo": "npm --prefix ./examples/demo/ start"
   },
   "peerDependencies": {
     "react": "^16.8.3 || ^17.0.0-0",
