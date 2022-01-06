@@ -70,22 +70,30 @@ function MyApp(props) {
 
 ```
 
-### useRechartToPng
+### Contributing/Developing
 
-This function has been deprecated and is no longer recommended for use due to poor performance.
+1. Fork/clone the repository
+   - [How to contribute to a project on Github](https://gist.github.com/MarcDiethelm/7303312)
+1. Install dependencies
 
-```javascript
-function MyComponent() {
-  // Attach ref to a Recharts component, and the png will be returned
-  // Also accepts an optional argument for Html2Canvas options: useRechartToPng(options)
-  const [png, ref] = useRechartToPng();
+   ```
+   npm i
+   ```
 
-  const handleDownload = React.useCallback(async () => {
-    FileSaver.saveAs(png, "myChart.png");
-  }, [png]);
+1. Build recharts-to-png in watch mode
 
-  return (
-    <LineChart ref={ref} ... />
-  )
-}
-```
+   ```
+   npm run watch
+   ```
+
+1. Start the demo to observe your changes
+
+   ```
+   npm run demo
+   ```
+
+1. Ensure all tests pass
+
+   ```
+   npm run test
+   ```
