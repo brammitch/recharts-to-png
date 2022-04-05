@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.0.1](https://github.com/brammitch/recharts-to-png/compare/v1.1.2...v2.0.1) (2022-04-05)
 
+- **deps:** Support React 18
+
 ### [2.0.0](https://github.com/brammitch/recharts-to-png/compare/v1.1.2...v2.0.0) (2022-01-06)
 
 ### Breaking
