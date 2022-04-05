@@ -44,9 +44,9 @@
     "demo": "npm --prefix ./examples/demo/ start"
   },
   "peerDependencies": {
-    "react": "^16.8.3 || ^17.0.0-0",
-    "react-dom": "^16.8.3 || ^17.0.0-0",
-    "recharts": "^1.8.0 || ^2.0.9"
+    "react": ">=16.8.3",
+    "react-dom": ">=16.8.3",
+    "recharts": ">=1.8.0"
   },
   "dependencies": {
     "html2canvas": "^1.2.0"
