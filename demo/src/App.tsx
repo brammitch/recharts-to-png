@@ -16,7 +16,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { useCurrentPng } from '../../../dist';
+import { useCurrentPng } from '../../dist';
 import './App.css';
 import { getLgData, getLgPieData, getSmPieData } from './data';
 
