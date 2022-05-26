@@ -22,5 +22,6 @@
     "strictNullChecks": true,
     "target": "es6"
   },
-  "include": ["lib"]
+  "include": ["lib"],
+  "exclude": ["**/__tests__/*"]
 }
