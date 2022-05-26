@@ -1,9 +1,20 @@
 {
-  "name": "rechart-to-png-demo",
-  "version": "0.1.0",
+  "name": "demo",
   "private": true,
   "scripts": {
     "start": "react-app-rewired start"
+  },
+  "devDependencies": {
+    "@types/random-number": "*",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.5",
+    "random-number": "0.0.9",
+    "react": "18.1.0",
+    "react-app-rewired": "2.2.1",
+    "react-dom": "18.1.0",
+    "react-scripts": "5.0.1",
+    "recharts": "2.1.10",
+    "typescript": "4.6.4"
   },
   "browserslist": {
     "production": [
