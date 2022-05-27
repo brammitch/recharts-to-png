@@ -1,21 +1,13 @@
-# Local demo for recharts-to-png
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A local copy of the demo for testing changes during development. Run all commands from the project root.
+## Getting Started
 
-### Test changes locally by building recharts-to-png...
+First, run the development server:
 
-```
-npm run build
-```
-
-### ...or in watch mode
-
-```
-npm run watch
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-### Start the demo
-
-```
-npm run demo
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

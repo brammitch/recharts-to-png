@@ -1,26 +1,3 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "dist",
-    "preserveConstEnums": true,
-    "resolveJsonModule": true,
-    "rootDir": "lib",
-    "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "target": "es6"
-  },
-  "include": ["lib"]
+  "extends": "./tsconfig.base.json"
 }

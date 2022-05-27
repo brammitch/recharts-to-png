@@ -5,6 +5,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended",
     "plugin:prettier/recommended"
   ],
   "env": {
@@ -20,6 +22,11 @@
   },
   "plugins": ["@typescript-eslint"],
   "settings": {
+    "settings": {
+      "next": {
+        "rootDir": "demo"
+      }
+    },
     "react": {
       "version": "detect"
     }

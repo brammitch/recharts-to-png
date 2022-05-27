@@ -1,6 +1,6 @@
 {
   "name": "recharts-to-png",
-  "version": "2.0.2",
+  "version": "2.1.0-rc.2",
   "description": "This package converts a Recharts chart to a png.",
   "author": "Brandon M. Mitchell",
   "license": "MIT",
@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/brammitch/recharts-to-png/issues"
   },
+  "workspaces": [
+    "demo",
+    "lib"
+  ],
   "files": [
     "dist"
   ],
@@ -29,19 +33,19 @@
     "typescript"
   ],
   "scripts": {
+    "build": "npm run clean && npm run build -w lib",
     "clean": "rimraf dist",
-    "build": "npm run clean && npx rollup -c rollup.config.js && cp ./dist/index.d.ts ./index.d.ts",
-    "release": "standard-version",
-    "postversion": "git push && git push --tags",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "coverage": "npm run coverage -w lib",
+    "demo": "npm run dev -w demo",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix",
+    "postversion": "git push && git push --tags",
     "prepare": "husky install",
-    "watch": "npx rollup -c rollup.config.js -w",
-    "demo": "npm --prefix ./demo/ start"
+    "release": "npm run build && standard-version",
+    "test": "npm run test -w lib",
+    "watch": "npm run watch -w lib"
   },
   "peerDependencies": {
     "react": ">=16.8.3",
@@ -52,44 +56,20 @@
     "html2canvas": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.18.2",
-    "@babel/plugin-transform-runtime": "7.18.2",
-    "@babel/preset-env": "7.18.2",
-    "@babel/preset-react": "7.17.12",
-    "@babel/preset-typescript": "7.17.12",
     "@commitlint/cli": "17.0.1",
     "@commitlint/config-conventional": "17.0.0",
-    "@rollup/plugin-babel": "5.3.1",
-    "@testing-library/react": "13.2.0",
-    "@types/file-saver": "2.0.5",
-    "@types/jest": "27.5.1",
+    "@next/eslint-plugin-next": "^12.1.6",
     "@types/node": "16.11.36",
-    "@types/random-number": "*",
-    "@types/react": "18.0.9",
-    "@types/react-dom": "18.0.5",
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
-    "babel-jest": "27.5.1",
     "eslint": "8.16.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
-    "file-saver": "2.0.5",
     "husky": "8.0.1",
-    "jest": "27.5.1",
-    "jest-canvas-mock": "2.4.0",
     "prettier": "2.6.2",
-    "random-number": "0.0.9",
-    "react": "18.1.0",
-    "react-app-rewired": "2.2.1",
-    "react-dom": "18.1.0",
-    "react-scripts": "5.0.1",
-    "recharts": "2.1.10",
-    "rollup": "2.74.1",
-    "rollup-plugin-typescript2": "0.31.2",
     "standard-version": "9.5.0",
-    "ts-jest": "27.1.5",
     "typescript": "4.6.4"
   }
 }
