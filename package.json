@@ -43,9 +43,17 @@
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix",
     "postversion": "git push && git push --tags",
     "prepare": "husky install",
-    "release": "standard-version",
+    "release": "npm run build && standard-version",
     "test": "npm run test -w lib",
     "watch": "npm run watch -w lib"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.3",
+    "react-dom": ">=16.8.3",
+    "recharts": ">=1.8.0"
+  },
+  "dependencies": {
+    "html2canvas": "^1.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.1",
