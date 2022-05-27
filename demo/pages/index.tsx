@@ -1,7 +1,7 @@
 import FileSaver from 'file-saver';
 import type { NextPage } from 'next';
 import rn from 'random-number';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   Area,
   AreaChart,
