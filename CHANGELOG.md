@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-rc.1](https://github.com/brammitch/recharts-to-png/compare/v2.1.0-rc.0...v2.1.0-rc.1) (2022-05-27)
+
+
+### Features
+
+* **other:** :bricks: change demo from cra to next ([0658c49](https://github.com/brammitch/recharts-to-png/commit/0658c49227873c91fd33382e5fa5a8d946ac4021))
+
 ## [2.1.0-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.3-rc.0...v2.1.0-rc.0) (2022-05-27)
 
 
