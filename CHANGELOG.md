@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [2.1.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.2...v2.1.0) (2022-05-27)
 
+- Maintenance release only
+- Improved development experience by utilizing npm workspaces
+- Switched demo from `create-react-app` to `next.js` to reduce security vulnurabilities
+
 ## [2.1.0-rc.2](https://github.com/brammitch/recharts-to-png/compare/v2.1.0-rc.1...v2.1.0-rc.2) (2022-05-27)
 
 - **other**: unify eslintrc and tsconfigs; clean up demo
