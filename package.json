@@ -36,7 +36,7 @@
     "build": "npm run clean && npm run build -w lib",
     "clean": "rimraf dist",
     "coverage": "npm run coverage -w lib",
-    "demo": "npm start -w demo",
+    "demo": "npm run dev -w demo",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",

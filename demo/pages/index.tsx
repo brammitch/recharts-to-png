@@ -1,4 +1,6 @@
 import FileSaver from 'file-saver';
+import type { NextPage } from 'next';
+import rn from 'random-number';
 import React, { useCallback, useState } from 'react';
 import {
   Area,
@@ -17,10 +19,43 @@ import {
   YAxis,
 } from 'recharts';
 import { useCurrentPng } from '../../dist';
-import './App.css';
-import { getLgData, getLgPieData, getSmPieData } from './data';
 
-function App(): JSX.Element {
+const lgGen = rn.generator({
+  min: 1000,
+  max: 9999,
+  integer: true,
+});
+
+const smGen = rn.generator({
+  min: 100,
+  max: 500,
+  integer: true,
+});
+
+function getLgData(size = 100): Record<string, string | number>[] {
+  return Array.from({ length: size }, (_, i) => ({
+    name: `Page ${i}`,
+    uv: lgGen(),
+    pv: lgGen(),
+    amt: lgGen(),
+  }));
+}
+
+function getSmPieData(size = 10): Record<string, string | number>[] {
+  return Array.from({ length: size }, (_, i) => ({
+    name: `Group ${i}`,
+    value: smGen(),
+  }));
+}
+
+function getLgPieData(size = 10): Record<string, string | number>[] {
+  return Array.from({ length: size }, (_, i) => ({
+    name: `Group ${i}`,
+    value: lgGen(),
+  }));
+}
+
+const Home: NextPage = () => {
   // Area chart setup
   const [areaData] = useState(getLgData(100));
   const [getAreaPng, { ref: areaRef }] = useCurrentPng();
@@ -173,6 +208,6 @@ function App(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Home;
