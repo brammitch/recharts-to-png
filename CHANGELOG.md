@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.3-rc.0...v2.1.0-rc.0) (2022-05-27)
+
+
+### Features
+
+* **other:** :building_construction: convert to workspace ([4dc7cad](https://github.com/brammitch/recharts-to-png/commit/4dc7caded00c513bbc7cc91682ad374b7ee969ec))
+
+
+### Bug Fixes
+
+* **deps:** :heavy_plus_sign: ensure deps  and peerDeps are added to release ([14e62a5](https://github.com/brammitch/recharts-to-png/commit/14e62a53c35428a540848a2fedf80e8af2b158df))
+
 ### [2.0.3-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.2...v2.0.3-rc.0) (2022-05-26)
 
 ### [2.0.2](https://github.com/brammitch/recharts-to-png/compare/v2.0.1...v2.0.2) (2022-04-18)
