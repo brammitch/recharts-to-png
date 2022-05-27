@@ -4,26 +4,27 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [2.1.0-rc.2](https://github.com/brammitch/recharts-to-png/compare/v2.1.0-rc.1...v2.1.0-rc.2) (2022-05-27)
 
-## [2.1.0-rc.1](https://github.com/brammitch/recharts-to-png/compare/v2.1.0-rc.0...v2.1.0-rc.1) (2022-05-27)
+- **other**: unify eslintrc and tsconfigs; clean up demo
 
+## [2.1.0-rc.1](https://github.com/brammitch/recharts-to-png/compare/v2.1.0-rc.0...v2.1.0-rc.1) (2022-05-27)
 
 ### Features
 
-* **other:** :bricks: change demo from cra to next ([0658c49](https://github.com/brammitch/recharts-to-png/commit/0658c49227873c91fd33382e5fa5a8d946ac4021))
+- **other:** :bricks: change demo from cra to next ([0658c49](https://github.com/brammitch/recharts-to-png/commit/0658c49227873c91fd33382e5fa5a8d946ac4021))
 
 ## [2.1.0-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.3-rc.0...v2.1.0-rc.0) (2022-05-27)
 
-
 ### Features
 
-* **other:** :building_construction: convert to workspace ([4dc7cad](https://github.com/brammitch/recharts-to-png/commit/4dc7caded00c513bbc7cc91682ad374b7ee969ec))
-
+- **other:** :building_construction: convert to workspace ([4dc7cad](https://github.com/brammitch/recharts-to-png/commit/4dc7caded00c513bbc7cc91682ad374b7ee969ec))
 
 ### Bug Fixes
 
-* **deps:** :heavy_plus_sign: ensure deps  and peerDeps are added to release ([14e62a5](https://github.com/brammitch/recharts-to-png/commit/14e62a53c35428a540848a2fedf80e8af2b158df))
+- **deps:** :heavy_plus_sign: ensure deps and peerDeps are added to release ([14e62a5](https://github.com/brammitch/recharts-to-png/commit/14e62a53c35428a540848a2fedf80e8af2b158df))
 
 ### [2.0.3-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.2...v2.0.3-rc.0) (2022-05-26)
+
+- **dist:** do not publish test files
 
 ### [2.0.2](https://github.com/brammitch/recharts-to-png/compare/v2.0.1...v2.0.2) (2022-04-18)
 
