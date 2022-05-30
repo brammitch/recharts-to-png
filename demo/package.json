@@ -16,6 +16,6 @@
     "@types/random-number": "*",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
-    "typescript": "4.6.4"
+    "typescript": "4.7.2"
   }
 }
