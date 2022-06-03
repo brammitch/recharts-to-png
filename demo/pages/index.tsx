@@ -1,6 +1,5 @@
 import FileSaver from 'file-saver';
 import type { NextPage } from 'next';
-import rn from 'random-number';
 import { useCallback, useState } from 'react';
 import {
   Area,
@@ -18,42 +17,9 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { useCurrentPng } from '../../dist';
-
-const lgGen = rn.generator({
-  min: 1000,
-  max: 9999,
-  integer: true,
-});
-
-const smGen = rn.generator({
-  min: 100,
-  max: 500,
-  integer: true,
-});
-
-function getLgData(size = 100): Record<string, string | number>[] {
-  return Array.from({ length: size }, (_, i) => ({
-    name: `Page ${i}`,
-    uv: lgGen(),
-    pv: lgGen(),
-    amt: lgGen(),
-  }));
-}
-
-function getSmPieData(size = 10): Record<string, string | number>[] {
-  return Array.from({ length: size }, (_, i) => ({
-    name: `Group ${i}`,
-    value: smGen(),
-  }));
-}
-
-function getLgPieData(size = 10): Record<string, string | number>[] {
-  return Array.from({ length: size }, (_, i) => ({
-    name: `Group ${i}`,
-    value: lgGen(),
-  }));
-}
+import { CurrentPng, useCurrentPng } from '../../dist';
+import ClassExample from '../components/class-example';
+import { getLgData, getLgPieData, getSmPieData } from '../utils';
 
 const Home: NextPage = () => {
   // Area chart setup
@@ -167,11 +133,16 @@ const Home: NextPage = () => {
           <code>Download Pie Chart</code>
         </button>
       </div>
+      <div className="class-composed-chart">
+        <h4>
+          <code>Class Component Example: Render Props with CurrentPng and isLoading</code>
+        </h4>
+        <CurrentPng>{(props) => <ClassExample {...props} />}</CurrentPng>
+      </div>
       <div className="composed-chart">
         <h4>
           <code>
-            Example: useCurrentPng for Responsive Composed Chart, with isLoading for button state
-            change
+            Example: useCurrentPng on large dataset, with isLoading for button state change
           </code>
         </h4>
         <ResponsiveContainer width="100%" height={300}>
