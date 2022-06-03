@@ -42,7 +42,7 @@ export function useCurrentPng(options?: Partial<Options>): UseCurrentPng {
 
 export interface CurrentPngProps {
   chartRef: React.RefObject<any>;
-  getPng: (options?: Partial<Options>) => Promise<string | unknown>;
+  getPng: (options?: Partial<Options>) => Promise<string | undefined>;
   isLoading: boolean;
 }
 
