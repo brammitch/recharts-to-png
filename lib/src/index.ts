@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import html2canvas, { Options } from 'html2canvas';
-import { useCallback, useRef, useState } from 'react';
+import { Component, createRef, useCallback, useRef, useState } from 'react';
 
 export type UseCurrentPng = [
   () => Promise<string | undefined>,
@@ -38,4 +38,47 @@ export function useCurrentPng(options?: Partial<Options>): UseCurrentPng {
       isLoading,
     },
   ];
+}
+
+export interface CurrentPngProps {
+  chartRef: React.RefObject<any>;
+  getPng: (options?: Partial<Options>) => Promise<string | unknown>;
+  isLoading: boolean;
+}
+
+interface Props {
+  children: (props: CurrentPngProps) => React.ReactNode;
+}
+
+interface State {
+  isLoading: boolean;
+}
+
+export class CurrentPng extends Component<Props, State> {
+  private chartRef = createRef<any>();
+
+  state: State = {
+    isLoading: false,
+  };
+
+  getPng = async (options?: Partial<Options>) => {
+    if (this.chartRef.current?.container) {
+      this.setState({ isLoading: true });
+
+      return await html2canvas(this.chartRef.current.container as HTMLElement, {
+        ...options,
+      }).then((canvas) => {
+        this.setState({ isLoading: false });
+        return canvas.toDataURL('image/png', 1.0);
+      });
+    }
+  };
+
+  render() {
+    return this.props.children({
+      chartRef: this.chartRef,
+      getPng: this.getPng,
+      isLoading: this.state.isLoading,
+    });
+  }
 }

@@ -2,7 +2,7 @@
   "name": "lib",
   "private": true,
   "scripts": {
-    "build": "npx rollup -c rollup.config.js && cp ../dist/index.d.ts ../index.d.ts",
+    "build": "npx rollup -c rollup.config.js",
     "test": "jest",
     "coverage": "jest --coverage",
     "watch": "npx rollup -c rollup.config.js -w"
