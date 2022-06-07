@@ -32,7 +32,7 @@ export default class ClassExample extends React.Component<CurrentPngProps, State
   }
 
   handleDownload = async () => {
-    const png = (await this.props.getPng()) as string;
+    const png = await this.props.getPng();
 
     if (png) {
       FileSaver.saveAs(png, 'class-component-chart.png');
