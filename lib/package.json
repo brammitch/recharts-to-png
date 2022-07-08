@@ -28,7 +28,7 @@
     "jest-canvas-mock": "2.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recharts": "2.1.10",
+    "recharts": "2.1.12",
     "rollup": "2.75.7",
     "rollup-plugin-typescript2": "0.31.2",
     "ts-jest": "27.1.5",
