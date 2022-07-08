@@ -6,16 +6,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.6",
+    "next": "12.2.1",
     "random-number": "0.0.9",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "recharts": "2.1.10"
   },
   "devDependencies": {
     "@types/random-number": "*",
-    "@types/react": "18.0.9",
-    "@types/react-dom": "18.0.5",
-    "typescript": "4.6.4"
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "typescript": "4.7.4"
   }
 }
