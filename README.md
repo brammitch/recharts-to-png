@@ -16,13 +16,13 @@ npm install recharts-to-png
 
 ## Demo
 
-See the demo [here](https://csb-dyy8q.netlify.app/). It implements _useCurrentPng_ with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
+See the demo [here](https://csb-dyy8q.netlify.app/). It implements `useCurrentPng` with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
 
 Source:
 
 [![Edit recharts-to-png](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recharts-to-png-dyy8q?fontsize=14&hidenavigation=1&theme=dark)
 
-For usage with class components, see an implementation of the _CurrentPng_ component with render props [here](https://codesandbox.io/s/reacharts-to-png-class-render-props-vk4jbl?file=/src/RenderPropsExample.tsx:461-476).
+For usage with class components, see an implementation of the `CurrentPng` component with render props [here](https://codesandbox.io/s/reacharts-to-png-class-render-props-vk4jbl?file=/src/RenderPropsExample.tsx:461-476).
 
 ## Usage
 
@@ -72,7 +72,7 @@ function MyApp(props) {
 
 ### CurrentPng
 
-Implements the same functionality as useCurrentPng but as a class component using render props.
+Per user request, `CurrentPng` implements the same functionality as useCurrentPng but as a class component using render props. See background in [this issue](https://github.com/brammitch/recharts-to-png/issues/445).
 
 ```jsx
 // index.tsx
