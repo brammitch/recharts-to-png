@@ -4,19 +4,19 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### [2.2.1](https://github.com/brammitch/recharts-to-png/compare/v2.2.0...v2.2.1) (2023-01-09)
 
+- **security:** :lock: fix json5 prototype pollution vulnerability (#585)
+
 ## [2.2.0](https://github.com/brammitch/recharts-to-png/compare/v2.1.0...v2.2.0) (2022-07-08)
 
 ## [2.2.0-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.1.0...v2.2.0-rc.0) (2022-06-07)
 
-
 ### Features
 
-* **lib:** :sparkles: add CurrentPng for use with class component ([3de2bca](https://github.com/brammitch/recharts-to-png/commit/3de2bca0eeafd366a0d3a379ccfe6edf2e29258e))
-
+- **lib:** :sparkles: add CurrentPng for use with class component ([3de2bca](https://github.com/brammitch/recharts-to-png/commit/3de2bca0eeafd366a0d3a379ccfe6edf2e29258e))
 
 ### Bug Fixes
 
-* **lib:** :label: fix getPng return type; use tsx extension ([e93058f](https://github.com/brammitch/recharts-to-png/commit/e93058f52c1bb6296ed7d412ba027e8332552d5d))
+- **lib:** :label: fix getPng return type; use tsx extension ([e93058f](https://github.com/brammitch/recharts-to-png/commit/e93058f52c1bb6296ed7d412ba027e8332552d5d))
 
 ## [2.1.0](https://github.com/brammitch/recharts-to-png/compare/v2.0.2...v2.1.0) (2022-05-27)
 
