@@ -13,7 +13,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { CurrentPngProps } from '../../dist';
+import { CurrentPngProps } from '../../../dist';
 import { getLgData } from '../utils';
 
 type State = {

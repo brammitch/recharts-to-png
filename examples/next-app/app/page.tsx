@@ -1,9 +1,10 @@
+'use client';
+
 import FileSaver from 'file-saver';
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 import {
   Area,
-  AreaChart,
   Bar,
   Brush,
   CartesianGrid,
@@ -17,21 +18,10 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { CurrentPng, useCurrentPng } from '../../dist';
-import ClassExample from '../components/class-example';
+import { useCurrentPng, useGenerateImage } from '../../../dist';
 import { getLgData, getLgPieData, getSmPieData } from '../utils';
 
 const Home: NextPage = () => {
-  // Area chart setup
-  const [areaData] = useState(getLgData(100));
-  const [getAreaPng, { ref: areaRef }] = useCurrentPng();
-  const handleAreaDownload = useCallback(async () => {
-    const png = await getAreaPng();
-    if (png) {
-      FileSaver.saveAs(png, 'area-chart.png');
-    }
-  }, [getAreaPng]);
-
   // Pie chart setup
   const [data01] = useState(getSmPieData());
   const [data02] = useState(getLgPieData());
@@ -53,51 +43,29 @@ const Home: NextPage = () => {
     }
   }, [getComposedPng]);
 
+  // Test div
+  const [getDivPng, { ref: divRef }] = useGenerateImage<HTMLDivElement>({
+    quality: 0.8,
+    type: 'image/jpeg',
+  });
+  const handleDivDownload = useCallback(async () => {
+    const png = await getDivPng();
+    if (png) {
+      FileSaver.saveAs(png, 'div.png');
+    }
+  }, [getDivPng]);
+
   return (
-    <div className="grid-container">
-      <div className="area-chart">
-        <h4>
-          <code>Example: useCurrentPng for Responsive Area Chart</code>
+    <div className="grid-container" ref={divRef}>
+      <div className="download-all">
+        <h4 style={{ textAlign: 'left' }}>
+          <code>
+            Example: useGenerateImage to target an HTMLDivElement and download the entire Div as a
+            JPEG with 80% quality
+          </code>
         </h4>
-        <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
-            data={areaData}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-            ref={areaRef}
-          >
-            <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-              </linearGradient>
-              <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="uv"
-              stroke="#8884d8"
-              fillOpacity={1}
-              fill="url(#colorUv)"
-            />
-            <Area
-              type="monotone"
-              dataKey="pv"
-              stroke="#82ca9d"
-              fillOpacity={1}
-              fill="url(#colorPv)"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-        <br />
-        <button onClick={handleAreaDownload}>
-          <code>Download Area Chart</code>
+        <button onClick={handleDivDownload}>
+          <code>Download All</code>
         </button>
       </div>
       <div className="pie-chart">
@@ -132,12 +100,6 @@ const Home: NextPage = () => {
         <button onClick={handlePieDownload}>
           <code>Download Pie Chart</code>
         </button>
-      </div>
-      <div className="class-composed-chart">
-        <h4>
-          <code>Class Component Example: Render Props with CurrentPng and isLoading</code>
-        </h4>
-        <CurrentPng>{(props) => <ClassExample {...props} />}</CurrentPng>
       </div>
       <div className="composed-chart">
         <h4>

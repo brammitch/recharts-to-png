@@ -24,7 +24,7 @@
   "settings": {
     "settings": {
       "next": {
-        "rootDir": "demo"
+        "rootDir": "examples/next-pages"
       }
     },
     "react": {
