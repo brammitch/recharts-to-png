@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.3.0-rc.0](https://github.com/brammitch/recharts-to-png/compare/v2.2.1...v2.3.0-rc.0) (2023-10-20)
+
+
+### Features
+
+* **lib:** :sparkles: Generate image without recharts ([2dbf262](https://github.com/brammitch/recharts-to-png/commit/2dbf262feae81d87038e004c0e990cb64dc173a3))
+
 ### [2.2.1](https://github.com/brammitch/recharts-to-png/compare/v2.2.0...v2.2.1) (2023-01-09)
 
 - **security:** :lock: fix json5 prototype pollution vulnerability (#585)
