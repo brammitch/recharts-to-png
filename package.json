@@ -13,7 +13,8 @@
     "url": "https://github.com/brammitch/recharts-to-png/issues"
   },
   "workspaces": [
-    "demo",
+    "examples/next-app",
+    "examples/next-pages",
     "lib"
   ],
   "files": [
@@ -36,7 +37,8 @@
     "build": "npm run clean && npm run build -w lib",
     "clean": "rimraf dist",
     "coverage": "npm run coverage -w lib",
-    "demo": "npm run dev -w demo",
+    "demo:app": "npm run dev -w examples/next-app",
+    "demo:pages": "npm run dev -w examples/next-pages",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
@@ -50,7 +52,12 @@
   "peerDependencies": {
     "react": ">=16.8.3",
     "react-dom": ">=16.8.3",
-    "recharts": ">=1.8.0"
+    "recharts": ">=2.9.0"
+  },
+  "peerDependenciesMeta": {
+    "recharts": {
+      "optional": true
+    }
   },
   "dependencies": {
     "html2canvas": "^1.2.0"
@@ -70,6 +77,6 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "8.0.1",
     "prettier": "2.7.1",
-    "typescript": "4.7.4"
+    "typescript": "5.2.2"
   }
 }
