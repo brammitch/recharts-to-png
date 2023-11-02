@@ -1,8 +1,16 @@
 import { fireEvent, render, renderHook, screen } from '@testing-library/react';
-import { Line, LineChart, XAxis, YAxis } from 'recharts';
-import { CurrentPng, CurrentPngProps, useCurrentPng } from '../index';
+import { Line, LineChart } from 'recharts';
+import { CurrentPng, CurrentPngProps, useCurrentPng, useGenerateImage } from '../index';
 
 jest.setTimeout(10000);
+
+describe('useGenerateImage', () => {
+  test('returns a tuple', async () => {
+    const { result } = renderHook(() => useGenerateImage());
+
+    expect(result.current.length).toBe(2);
+  });
+});
 
 describe('useCurrentPng', () => {
   test('returns a tuple', async () => {
@@ -20,8 +28,6 @@ function TestComponent(props: CurrentPngProps) {
   return (
     <>
       <LineChart width={200} height={200} data={[{ name: 'a', amt: 1 }]} ref={props.chartRef}>
-        <XAxis dataKey="name" />
-        <YAxis />
         <Line type="monotone" dataKey="amt" stroke="#82ca9d" />
       </LineChart>
       <button onClick={() => handleClick()}>Get Png</button>
