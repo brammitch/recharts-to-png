@@ -1,6 +1,6 @@
 {
   "name": "recharts-to-png",
-  "version": "2.3.0-rc.0",
+  "version": "2.3.0",
   "description": "This package converts a Recharts chart to a png.",
   "author": "Brandon M. Mitchell",
   "license": "MIT",
