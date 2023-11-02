@@ -7,7 +7,7 @@ export type UseGenerateImage<T extends HTMLElement = HTMLDivElement> = [
   {
     isLoading: boolean;
     ref: React.MutableRefObject<T | null>;
-  }
+  },
 ];
 
 export type UseGenerateImageArgs = {
@@ -58,7 +58,7 @@ export type UseCurrentPng = [
   {
     isLoading: boolean;
     ref: React.MutableRefObject<any>;
-  }
+  },
 ];
 
 /**
