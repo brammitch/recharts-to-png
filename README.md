@@ -4,7 +4,9 @@
 
 # recharts-to-png
 
-Uses [html2canvas](https://github.com/niklasvh/html2canvas) to convert a [Recharts](https://github.com/recharts/recharts) chart to PNG.
+A wrapper around [html2canvas](https://github.com/niklasvh/html2canvas) that will convert any element to an image with the `useGenerateImage` hook.
+
+Originally written specifically to transform [Recharts](https://github.com/recharts/recharts) charts to PNG.
 
 Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom). Special thanks to [HarmNullix](https://github.com/brammitch/recharts-to-png/issues/160#issuecomment-852812993) for helping to improve the performance of this library.
 
@@ -16,7 +18,9 @@ npm install recharts-to-png
 
 ## Demo
 
-See the demo [here](https://csb-dyy8q.netlify.app/). It implements `useCurrentPng` with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
+See the demo [here](https://csb-dyy8q.netlify.app/).
+
+It implements `useGenerateImage` and `useCurrentPng` with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
 
 Source:
 
@@ -26,9 +30,38 @@ For usage with class components, see an implementation of the `CurrentPng` compo
 
 ## Usage
 
+### useGenerateImage
+
+`useGenerateImage` is a React hook that returns a tuple. The first parameter is a promise that will return a string if the image is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target HTML element, and `isLoading`, which is optional and changes state from false to true while the image is being generated.
+
+You can pass arguments to `useGenerateImage`:
+
+```ts
+options?: HTML2CanvasOptions;
+quality?: number;
+type?: string;
+```
+
+```tsx
+// Implement useGenerateImage to get an image of any element (not just a Recharts component)
+const [getDivJpeg, { ref }] = useGenerateImage<HTMLDivElement>({
+  quality: 0.8,
+  type: 'image/jpeg',
+});
+
+const handleDivDownload = useCallback(async () => {
+  const jpeg = await getDivJpeg();
+  if (jpeg) {
+    FileSaver.saveAs(jpeg, 'div-element.jpeg');
+  }
+}, []);
+
+return <div ref={ref}>{/* content goes here */}</div>;
+```
+
 ### useCurrentPng
 
-`useCurrentPng` is a React hook that returns a tuple. The first parameter is a promise that will return a string if the PNG is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target Recharts component, and `isLoading`, which is optional and changes state from false to true while the PNG is being generated and downloaded.
+`useCurrentPng` is a React hook that returns a tuple. The first parameter is a promise that will return a string if the PNG is valid. The second parameter is an object with two properties: `ref`, which is required to be attached to the target Recharts component, and `isLoading`, which is optional and changes state from false to true while the PNG is being generated.
 
 ```jsx
 function MyApp(props) {
@@ -74,7 +107,7 @@ function MyApp(props) {
 
 Per user request, `CurrentPng` implements the same functionality as useCurrentPng but as a class component using render props. See background in [this issue](https://github.com/brammitch/recharts-to-png/issues/445).
 
-```jsx
+```tsx
 // index.tsx
 ReactDOM.render(
   <CurrentPng>{(props) => <RenderPropsExample {...props} />}</CurrentPng>,
@@ -163,7 +196,7 @@ export default class RenderPropsExample extends React.Component<CurrentPngProps,
 1. Start the demo to observe your changes
 
    ```
-   npm run demo
+   npm run demo:app
    ```
 
 1. Ensure all tests pass
