@@ -1,5 +1,6 @@
 [![npm](https://img.shields.io/npm/v/recharts-to-png)](https://www.npmjs.com/package/recharts-to-png)
 [![Build Status](https://travis-ci.com/brammitch/recharts-to-png.svg?branch=master)](https://app.travis-ci.com/github/brammitch/recharts-to-png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/35b3343e-3abe-4c8b-bd68-e74e2e043a3d/deploy-status)](https://app.netlify.com/sites/recharts-to-png/deploys)
 [![GitHub](https://img.shields.io/github/license/brammitch/recharts-to-png)](LICENSE)
 
 # recharts-to-png
