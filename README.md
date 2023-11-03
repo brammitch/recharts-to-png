@@ -19,13 +19,11 @@ npm install recharts-to-png
 
 ## Demo
 
-See the demo [here](https://csb-dyy8q.netlify.app/).
+See the demo [here](https://recharts-to-png.netlify.app/).
 
 It implements `useGenerateImage` and `useCurrentPng` with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
 
-Source:
-
-[![Edit recharts-to-png](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recharts-to-png-dyy8q?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/brammitch/recharts-to-png-demo?file=src%2FApp.tsx)
 
 For usage with class components, see an implementation of the `CurrentPng` component with render props [here](https://codesandbox.io/s/reacharts-to-png-class-render-props-vk4jbl?file=/src/RenderPropsExample.tsx:461-476).
 
