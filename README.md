@@ -30,6 +30,7 @@ It implements `useGenerateImage` and `useCurrentPng` with different chart types 
 ### Class Components
 
 For usage with clas components, implement `CurrentPng` component with render props.
+
 [![Edit reacharts-to-png-class-render-props](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/reacharts-to-png-class-render-props-vk4jbl)
 
 ## Usage
