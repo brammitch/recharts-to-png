@@ -1,5 +1,6 @@
 [![npm](https://img.shields.io/npm/v/recharts-to-png)](https://www.npmjs.com/package/recharts-to-png)
 [![Build Status](https://travis-ci.com/brammitch/recharts-to-png.svg?branch=master)](https://app.travis-ci.com/github/brammitch/recharts-to-png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/35b3343e-3abe-4c8b-bd68-e74e2e043a3d/deploy-status)](https://app.netlify.com/sites/recharts-to-png/deploys)
 [![GitHub](https://img.shields.io/github/license/brammitch/recharts-to-png)](LICENSE)
 
 # recharts-to-png
@@ -18,13 +19,11 @@ npm install recharts-to-png
 
 ## Demo
 
-See the demo [here](https://csb-dyy8q.netlify.app/).
+See the demo [here](https://recharts-to-png.netlify.app/).
 
 It implements `useGenerateImage` and `useCurrentPng` with different chart types and [file-saver](https://www.npmjs.com/package/file-saver).
 
-Source:
-
-[![Edit recharts-to-png](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/recharts-to-png-dyy8q?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/brammitch/recharts-to-png-demo?file=src%2FApp.tsx)
 
 For usage with class components, see an implementation of the `CurrentPng` component with render props [here](https://codesandbox.io/s/reacharts-to-png-class-render-props-vk4jbl?file=/src/RenderPropsExample.tsx:461-476).
 
