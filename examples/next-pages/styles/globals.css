@@ -8,6 +8,9 @@ h4 {
   grid-gap: 1rem;
   grid-template: 80px 1fr 1fr 1fr / 1fr 1fr 1fr;
   width: 100%;
+  font:
+    0.7rem 'Fira Sans',
+    sans-serif;
 }
 
 .download-all {
