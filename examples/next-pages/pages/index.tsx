@@ -25,33 +25,55 @@ const Home: NextPage = () => {
   // Area chart setup
   const [areaData] = useState(getLgData(100));
   const [getAreaPng, { ref: areaRef }] = useCurrentPng();
-  const handleAreaDownload = useCallback(async () => {
-    const png = await getAreaPng();
-    if (png) {
-      FileSaver.saveAs(png, 'area-chart.png');
-    }
-  }, [getAreaPng]);
+  const handleAreaDownload = useCallback(
+    async (copyToClipboard?: boolean) => {
+      if (copyToClipboard) {
+        getAreaPng({ copyToClipboard });
+      } else {
+        const png = await getAreaPng();
+        if (png) {
+          FileSaver.saveAs(png, 'area-chart.png');
+        }
+      }
+    },
+    [getAreaPng]
+  );
 
   // Pie chart setup
   const [data01] = useState(getSmPieData());
   const [data02] = useState(getLgPieData());
   const [getPiePng, { ref: pieRef }] = useCurrentPng();
-  const handlePieDownload = useCallback(async () => {
-    const png = await getPiePng();
-    if (png) {
-      FileSaver.saveAs(png, 'pie-chart.png');
-    }
-  }, [getPiePng]);
+  const handlePieDownload = useCallback(
+    async (copyToClipboard?: boolean) => {
+      if (copyToClipboard) {
+        getPiePng({ copyToClipboard });
+      } else {
+        const png = await getPiePng();
+        if (png) {
+          FileSaver.saveAs(png, 'pie-chart.png');
+        }
+      }
+    },
+    [getPiePng]
+  );
 
   // Composed chart setup
   const [composedData] = useState(getLgData(500));
-  const [getComposedPng, { ref: composedRef, isLoading }] = useCurrentPng();
-  const handleComposedDownload = useCallback(async () => {
-    const png = await getComposedPng();
-    if (png) {
-      FileSaver.saveAs(png, 'composed-chart.png');
-    }
-  }, [getComposedPng]);
+  const [getComposedPng, { ref: composedRef, isLoading, isCopyToClipboardLoading }] =
+    useCurrentPng();
+  const handleComposedDownload = useCallback(
+    async (copyToClipboard?: boolean) => {
+      if (copyToClipboard) {
+        getComposedPng({ copyToClipboard });
+      } else {
+        const png = await getComposedPng();
+        if (png) {
+          FileSaver.saveAs(png, 'composed-chart.png');
+        }
+      }
+    },
+    [getComposedPng]
+  );
 
   // Test div
   const [getDivPng, { ref: divRef }] = useGenerateImage<HTMLDivElement>();
@@ -113,8 +135,11 @@ const Home: NextPage = () => {
           </AreaChart>
         </ResponsiveContainer>
         <br />
-        <button onClick={handleAreaDownload}>
+        <button onClick={() => handleAreaDownload()}>
           <code>Download Area Chart</code>
+        </button>
+        <button onClick={() => handleAreaDownload(true)}>
+          <code>Copy Area Chart to Clipboard</code>
         </button>
       </div>
       <div className="pie-chart">
@@ -146,8 +171,11 @@ const Home: NextPage = () => {
           </PieChart>
         </ResponsiveContainer>
         <br />
-        <button onClick={handlePieDownload}>
+        <button onClick={() => handlePieDownload()}>
           <code>Download Pie Chart</code>
+        </button>
+        <button onClick={() => handlePieDownload(true)}>
+          <code>Copy Pie Chart to Clipboard</code>
         </button>
       </div>
       <div className="class-composed-chart">
@@ -176,7 +204,7 @@ const Home: NextPage = () => {
           </ComposedChart>
         </ResponsiveContainer>
         <br />
-        <button disabled={isLoading} onClick={handleComposedDownload}>
+        <button disabled={isLoading} onClick={() => handleComposedDownload()}>
           {isLoading ? (
             <span className="download-button-content">
               <i className="gg-spinner" />
@@ -189,6 +217,23 @@ const Home: NextPage = () => {
               <i className="gg-software-download" />
               <span className="download-button-text">
                 <code>Download Composed Chart</code>
+              </span>
+            </span>
+          )}
+        </button>
+        <button disabled={isCopyToClipboardLoading} onClick={() => handleComposedDownload(true)}>
+          {isCopyToClipboardLoading ? (
+            <span className="download-button-content">
+              <i className="gg-spinner" />
+              <span className="download-button-text">
+                <code>Copying...</code>
+              </span>
+            </span>
+          ) : (
+            <span className="download-button-content">
+              <i className="gg-software-download" />
+              <span className="download-button-text">
+                <code>Copy Composed Chart To Clipboard</code>
               </span>
             </span>
           )}

@@ -35,9 +35,17 @@ const Home: NextPage = () => {
 
   // Composed chart setup
   const [composedData] = useState(getLgData(500));
-  const [getComposedPng, { ref: composedRef, isLoading }] = useCurrentPng();
+  const [getComposedPng, { ref: composedRef, isLoading, isCopyToClipboardLoading }] =
+    useCurrentPng();
   const handleComposedDownload = useCallback(async () => {
     const png = await getComposedPng();
+    if (png) {
+      FileSaver.saveAs(png, 'composed-chart.png');
+    }
+  }, [getComposedPng]);
+
+  const handleComposedCopyToClipboard = useCallback(async () => {
+    const png = await getComposedPng({ copyToClipboard: true });
     if (png) {
       FileSaver.saveAs(png, 'composed-chart.png');
     }
@@ -134,6 +142,23 @@ const Home: NextPage = () => {
               <i className="gg-software-download" />
               <span className="download-button-text">
                 <code>Download Composed Chart</code>
+              </span>
+            </span>
+          )}
+        </button>
+        <button disabled={isCopyToClipboardLoading} onClick={handleComposedCopyToClipboard}>
+          {isCopyToClipboardLoading ? (
+            <span className="download-button-content">
+              <i className="gg-spinner" />
+              <span className="download-button-text">
+                <code>Copying to Clipboard...</code>
+              </span>
+            </span>
+          ) : (
+            <span className="download-button-content">
+              <i className="gg-software-download" />
+              <span className="download-button-text">
+                <code>Copy Composed Chart to Clipboard</code>
               </span>
             </span>
           )}
