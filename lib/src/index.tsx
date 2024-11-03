@@ -54,9 +54,10 @@ export function useGenerateImage<T extends HTMLElement = HTMLDivElement>(
 }
 
 export type UseCurrentPng = [
-  () => Promise<string | undefined>,
+  (c?: { copyToClipboard?: boolean }) => Promise<void | string | undefined>,
   {
     isLoading: boolean;
+    isCopyToClipboardLoading: boolean;
     ref: React.MutableRefObject<any>;
   },
 ];
@@ -67,26 +68,49 @@ export type UseCurrentPng = [
 export function useCurrentPng(options?: Partial<HTML2CanvasOptions>): UseCurrentPng {
   const ref = useRef<any>();
   const [isLoading, setIsLoading] = useState(false);
+  const [isCopyToClipboardLoading, setIsCopyToClipboardLoading] = useState(false);
 
-  const getPng = useCallback(async () => {
-    if (ref !== null && ref?.current?.container) {
-      setIsLoading(true);
+  const getPng = useCallback(
+    async (pngOptions?: { copyToClipboard?: boolean }) => {
+      if (ref !== null && ref?.current?.container) {
+        !pngOptions?.copyToClipboard ? setIsLoading(true) : setIsCopyToClipboardLoading(true);
 
-      return await html2canvas(ref.current.container as HTMLElement, {
-        logging: false,
-        ...options,
-      }).then((canvas) => {
-        setIsLoading(false);
-        return canvas.toDataURL('image/png', 1.0);
-      });
-    }
-  }, [options]);
+        return await html2canvas(ref.current.container as HTMLElement, {
+          logging: false,
+          ...options,
+        }).then((canvas) => {
+          if (pngOptions?.copyToClipboard)
+            return canvas.toBlob(
+              (blob) => {
+                if (blob) {
+                  navigator.clipboard.write([
+                    new ClipboardItem(
+                      Object.defineProperty({}, 'image/png', {
+                        value: blob,
+                        enumerable: true,
+                      })
+                    ),
+                  ]);
+                  setIsCopyToClipboardLoading(false);
+                }
+              },
+              'image/png',
+              1.0
+            );
+          setIsLoading(false);
+          return canvas.toDataURL('image/png', 1.0);
+        });
+      }
+    },
+    [options]
+  );
 
   return [
     getPng,
     {
       ref,
       isLoading,
+      isCopyToClipboardLoading,
     },
   ];
 }
