@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.0](https://github.com/brammitch/recharts-to-png/compare/v2.3.2...v2.4.0) (2024-11-04)
+
+
+### Features
+
+* **lib:** :sparkles: enable copy to clipboard functionality to useCurrentPnh hook ([89678bf](https://github.com/brammitch/recharts-to-png/commit/89678bf1cb31fd53228ceff4ec678e653aac9dc5))
+* **lib:** :sparkles: optional callback can be passed to canvas.toBlob ([5a96d62](https://github.com/brammitch/recharts-to-png/commit/5a96d62ccad80b889cd7db242d150b73a8555202))
+
 ### [2.3.2](https://github.com/brammitch/recharts-to-png/compare/v2.3.1...v2.3.2) (2024-05-10)
 
 - **security:** :lock: dependabot alert for next (#637)
