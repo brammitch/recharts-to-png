@@ -50,16 +50,16 @@ const Home: NextPage = () => {
   }, [getComposedPng]);
 
   // Test div
-  const [getDivPng, { ref: divRef }] = useGenerateImage<HTMLDivElement>({
+  const [getDivJpeg, { ref: divRef }] = useGenerateImage<HTMLDivElement>({
     quality: 0.8,
     type: 'image/jpeg',
   });
   const handleDivDownload = useCallback(async () => {
-    const png = await getDivPng();
-    if (png) {
-      FileSaver.saveAs(png, 'div.png');
+    const jpeg = await getDivJpeg();
+    if (jpeg) {
+      FileSaver.saveAs(jpeg, 'div.jpeg');
     }
-  }, [getDivPng]);
+  }, [getDivJpeg]);
 
   return (
     <div className="grid-container" ref={divRef}>
