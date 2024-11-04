@@ -7,7 +7,7 @@
   "homepage": "https://github.com/brammitch/recharts-to-png#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brammitch/recharts-to-png"
+    "url": "git+https://github.com/brammitch/recharts-to-png.git"
   },
   "bugs": {
     "url": "https://github.com/brammitch/recharts-to-png/issues"
