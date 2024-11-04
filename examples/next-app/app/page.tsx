@@ -26,26 +26,24 @@ const Home: NextPage = () => {
   const [data01] = useState(getSmPieData());
   const [data02] = useState(getLgPieData());
   const [getPiePng, { ref: pieRef }] = useCurrentPng();
-  const handlePieDownload = useCallback(async () => {
-    const png = await getPiePng();
-    if (png) {
-      FileSaver.saveAs(png, 'pie-chart.png');
-    }
+  const handlePieCopyToClipboard = useCallback(async () => {
+    // Pass in optional callback for canvas.toBlob
+    await getPiePng((blob) => {
+      blob &&
+        navigator.clipboard.write([
+          new ClipboardItem({
+            // The key is determined dynamically based on the blob's type.
+            [blob.type]: blob,
+          }),
+        ]);
+    });
   }, [getPiePng]);
 
   // Composed chart setup
   const [composedData] = useState(getLgData(500));
-  const [getComposedPng, { ref: composedRef, isLoading, isCopyToClipboardLoading }] =
-    useCurrentPng();
+  const [getComposedPng, { ref: composedRef, isLoading }] = useCurrentPng();
   const handleComposedDownload = useCallback(async () => {
     const png = await getComposedPng();
-    if (png) {
-      FileSaver.saveAs(png, 'composed-chart.png');
-    }
-  }, [getComposedPng]);
-
-  const handleComposedCopyToClipboard = useCallback(async () => {
-    const png = await getComposedPng({ copyToClipboard: true });
     if (png) {
       FileSaver.saveAs(png, 'composed-chart.png');
     }
@@ -105,8 +103,8 @@ const Home: NextPage = () => {
           </PieChart>
         </ResponsiveContainer>
         <br />
-        <button onClick={handlePieDownload}>
-          <code>Download Pie Chart</code>
+        <button onClick={handlePieCopyToClipboard}>
+          <code>Copy Pie Chart to Clipboard</code>
         </button>
       </div>
       <div className="composed-chart">
@@ -142,23 +140,6 @@ const Home: NextPage = () => {
               <i className="gg-software-download" />
               <span className="download-button-text">
                 <code>Download Composed Chart</code>
-              </span>
-            </span>
-          )}
-        </button>
-        <button disabled={isCopyToClipboardLoading} onClick={handleComposedCopyToClipboard}>
-          {isCopyToClipboardLoading ? (
-            <span className="download-button-content">
-              <i className="gg-spinner" />
-              <span className="download-button-text">
-                <code>Copying to Clipboard...</code>
-              </span>
-            </span>
-          ) : (
-            <span className="download-button-content">
-              <i className="gg-software-download" />
-              <span className="download-button-text">
-                <code>Copy Composed Chart to Clipboard</code>
               </span>
             </span>
           )}
