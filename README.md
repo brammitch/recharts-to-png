@@ -60,7 +60,7 @@ const handleDivDownload = useCallback(async () => {
   if (jpeg) {
     FileSaver.saveAs(jpeg, 'div-element.jpeg');
   }
-}, []);
+}, [getDivJpeg]);
 
 return <div ref={ref}>{/* content goes here */}</div>;
 ```
@@ -107,6 +107,43 @@ function MyApp(props) {
     </>
   );
 
+```
+
+### Passing a callback to `canvas.toBlob()`
+
+In addition to returning a string, the promises also accept an optional callback that will be passed to `canvas.toBlob()`, allowing you to add your own custom logic.
+
+```ts
+export type UseGenerateImage<T extends HTMLElement = HTMLDivElement> = [
+  (callback?: BlobCallback) => Promise<string | undefined>,
+  {
+    isLoading: boolean;
+    ref: React.MutableRefObject<T | null>;
+  },
+];
+```
+
+Here's an example using the callback to copy the image to the clipboard:
+
+```tsx
+const [getDivPng, { ref }] = useGenerateImage<HTMLDivElement>({
+  type: 'image/png',
+});
+
+const handleDivCopyToClipboard = useCallback(async () => {
+  // Pass in optional callback for canvas.toBlob
+  await getDivPng((blob) => {
+    blob &&
+      navigator.clipboard.write([
+        new ClipboardItem({
+          // The key is determined dynamically based on the blob's type.
+          [blob.type]: blob,
+        }),
+      ]);
+  });
+}, [getDivPng]);
+
+return <div ref={ref}>{/* content goes here */}</div>;
 ```
 
 ### CurrentPng
