@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [3.0.1](https://github.com/brammitch/recharts-to-png/compare/v3.0.0...v3.0.1) (2025-06-23)
+
+
+### Bug Fixes
+
+* **deps:** :lock: npm audit fix ([3c43922](https://github.com/brammitch/recharts-to-png/commit/3c439221cbe34f9093e307d73781a97d09ffcd78))
+
 ## [3.0.0](https://github.com/brammitch/recharts-to-png/compare/v2.4.1...v3.0.0) (2025-06-23)
 
 
