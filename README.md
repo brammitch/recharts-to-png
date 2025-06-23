@@ -6,11 +6,13 @@
 
 # recharts-to-png
 
-A wrapper around [html2canvas](https://github.com/niklasvh/html2canvas) that will convert any element to an image with the `useGenerateImage` hook.
+A wrapper around [html2canvas](https://github.com/niklasvh/html2canvas) that will convert any element to an image with the `useGenerateImage` hook. This is a universal function that will work with any HTML element; it is not specific to Recharts.
 
-Originally written specifically to transform [Recharts](https://github.com/recharts/recharts) charts to PNG.
+This library was originally written specifically to transform [Recharts](https://github.com/recharts/recharts) charts to PNG, via `useCurrentPng` and `CurrentPng`. **These are not compatible with the newly released Recharts v3.** To use this library with Recharts, either stick with Recharts v2 or utilize the `useGenerateImage` hook.
 
-Inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom). Special thanks to [HarmNullix](https://github.com/brammitch/recharts-to-png/issues/160#issuecomment-852812993) for helping to improve the performance of this library.
+`recharts-to-png` was inspired by these Stack Overflow questions and answers from [peter.bartos](https://stackoverflow.com/questions/45086005/recharts-component-to-png/56223127?noredirect=1#comment100914961_56223127) and [AlbertMunichMar](https://stackoverflow.com/questions/57206626/download-chart-as-png-format-in-react-without-overwriting-the-dom).
+
+Special thanks to [HarmNullix](https://github.com/brammitch/recharts-to-png/issues/160#issuecomment-852812993) for helping to improve the performance of this library.
 
 ## Install
 
