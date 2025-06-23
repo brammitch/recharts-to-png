@@ -4,7 +4,7 @@
   "description": "This package converts a Recharts chart to a png.",
   "author": "Brandon M. Mitchell",
   "license": "MIT",
-  "homepage": "https://github.com/brammitch/recharts-to-png#readme",
+  "homepage": "https://recharts-to-png.netlify.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brammitch/recharts-to-png.git"
