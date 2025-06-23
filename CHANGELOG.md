@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://github.com/brammitch/recharts-to-png/compare/v2.4.1...v3.0.0) (2025-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* requires Recharts v3
+
+### Features
+
+* recharts v3 compatibility ([eb69df3](https://github.com/brammitch/recharts-to-png/commit/eb69df357c52b93549bae65f2dd9040d303a6fdd))
+
 ### [2.4.1](https://github.com/brammitch/recharts-to-png/compare/v2.4.0...v2.4.1) (2025-06-23)
 
 - **deps:** :pushpin: pin version 2 of `recharts-to-png` to version 2 of `recharts`
