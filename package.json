@@ -52,7 +52,7 @@
   "peerDependencies": {
     "react": ">=16.8.3",
     "react-dom": ">=16.8.3",
-    "recharts": ">=2.9.0"
+    "recharts": "^2.9.0"
   },
   "peerDependenciesMeta": {
     "recharts": {
