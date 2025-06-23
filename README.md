@@ -6,7 +6,7 @@
 
 # recharts-to-png
 
-A wrapper around [html2canvas](https://github.com/niklasvh/html2canvas) that will convert any element to an image with the `useGenerateImage` hook. This is a universal function that will work with any HTML element; it is not specific to Recharts.
+A wrapper around [html2canvas](https://github.com/niklasvh/html2canvas) that will convert any HTML element to an image with the `useGenerateImage` hook. This is a universal function that will work with any HTML element; it is not specific to Recharts.
 
 This library was originally written specifically to transform [Recharts](https://github.com/recharts/recharts) charts to PNG, via `useCurrentPng` and `CurrentPng`. **These are not compatible with the newly released Recharts v3.** To use this library with Recharts, either stick with Recharts v2 or utilize the `useGenerateImage` hook.
 
@@ -51,7 +51,7 @@ type?: string;
 ```
 
 ```tsx
-// Implement useGenerateImage to get an image of any element (not just a Recharts component)
+// Implement useGenerateImage to get an image of any HTML element
 const [getDivJpeg, { ref }] = useGenerateImage<HTMLDivElement>({
   quality: 0.8,
   type: 'image/jpeg',
