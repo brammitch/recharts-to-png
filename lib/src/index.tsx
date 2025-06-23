@@ -32,7 +32,7 @@ export function useGenerateImage<T extends HTMLElement = HTMLDivElement>(
 
   const generateImage = useCallback(
     async (callback?: BlobCallback) => {
-      if (ref !== null && ref?.current) {
+      if (ref?.current) {
         setIsLoading(true);
 
         return await html2canvas(ref.current as HTMLElement, {
@@ -71,15 +71,15 @@ export type UseCurrentPng = [
  * @param options - optional html2canvas Options object
  */
 export function useCurrentPng(options?: Partial<HTML2CanvasOptions>): UseCurrentPng {
-  const ref = useRef<any>();
+  const ref = useRef<SVGElement>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const getPng = useCallback(
     async (callback?: BlobCallback) => {
-      if (ref !== null && ref?.current?.container) {
+      if (ref.current?.parentElement) {
         setIsLoading(true);
 
-        return await html2canvas(ref.current.container as HTMLElement, {
+        return await html2canvas(ref.current.parentElement, {
           logging: false,
           ...options,
         }).then((canvas) => {
@@ -118,17 +118,17 @@ interface State {
 }
 
 export class CurrentPng extends Component<Props, State> {
-  private chartRef = createRef<any>();
+  private chartRef = createRef<SVGElement>();
 
   state: State = {
     isLoading: false,
   };
 
   getPng = async (options?: Partial<HTML2CanvasOptions>) => {
-    if (this.chartRef.current?.container) {
+    if (this.chartRef.current?.parentElement) {
       this.setState({ isLoading: true });
 
-      return await html2canvas(this.chartRef.current.container as HTMLElement, {
+      return await html2canvas(this.chartRef.current.parentElement, {
         ...options,
       }).then((canvas) => {
         this.setState({ isLoading: false });
