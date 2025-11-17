@@ -22,10 +22,8 @@
   },
   "plugins": ["@typescript-eslint"],
   "settings": {
-    "settings": {
-      "next": {
-        "rootDir": "examples/next-pages"
-      }
+    "next": {
+      "rootDir": "examples/next-pages"
     },
     "react": {
       "version": "detect"
