@@ -36,7 +36,7 @@
     "build": "npm run clean && npm run build -w lib",
     "clean": "rimraf dist",
     "coverage": "npm run coverage -w lib",
-    "demo": "npm run dev -w examples/next-app",
+    "demo": "npm run dev -w examples/next",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
