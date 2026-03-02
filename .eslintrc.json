@@ -23,7 +23,7 @@
   "plugins": ["@typescript-eslint"],
   "settings": {
     "next": {
-      "rootDir": "examples/next-pages"
+      "rootDir": "examples/next"
     },
     "react": {
       "version": "detect"

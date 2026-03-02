@@ -252,7 +252,7 @@ export default class RenderPropsExample extends React.Component<CurrentPngProps,
 1. Start the demo to observe your changes
 
    ```
-   npm run demo:app
+   npm run demo
    ```
 
 1. Ensure all tests pass
