@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
@@ -6,7 +7,6 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:@next/next/recommended",
     "plugin:prettier/recommended"
   ],
   "env": {
@@ -22,9 +22,6 @@
   },
   "plugins": ["@typescript-eslint"],
   "settings": {
-    "next": {
-      "rootDir": "examples/next"
-    },
     "react": {
       "version": "detect"
     }
