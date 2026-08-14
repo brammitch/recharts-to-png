@@ -35,16 +35,20 @@ export function useGenerateImage<T extends HTMLElement = HTMLDivElement>(
       if (ref?.current) {
         setIsLoading(true);
 
-        return await html2canvas(ref.current as HTMLElement, {
-          logging: false,
-          ...args?.options,
-        }).then((canvas) => {
+        try {
+          const canvas = await html2canvas(ref.current as HTMLElement, {
+            logging: false,
+            ...args?.options,
+          });
+
           if (callback) {
             canvas.toBlob(callback, args?.type, args?.quality);
           }
-          setIsLoading(false);
+
           return canvas.toDataURL(args?.type, args?.quality);
-        });
+        } finally {
+          setIsLoading(false);
+        }
       }
     },
     [args]
@@ -79,16 +83,20 @@ export function useCurrentPng(options?: Partial<HTML2CanvasOptions>): UseCurrent
       if (ref.current?.parentElement) {
         setIsLoading(true);
 
-        return await html2canvas(ref.current.parentElement, {
-          logging: false,
-          ...options,
-        }).then((canvas) => {
+        try {
+          const canvas = await html2canvas(ref.current.parentElement, {
+            logging: false,
+            ...options,
+          });
+
           if (callback) {
             canvas.toBlob(callback, 'image/png', 1.0);
           }
-          setIsLoading(false);
+
           return canvas.toDataURL('image/png', 1.0);
-        });
+        } finally {
+          setIsLoading(false);
+        }
       }
     },
     [options]
@@ -128,12 +136,15 @@ export class CurrentPng extends Component<Props, State> {
     if (this.chartRef.current?.parentElement) {
       this.setState({ isLoading: true });
 
-      return await html2canvas(this.chartRef.current.parentElement, {
-        ...options,
-      }).then((canvas) => {
-        this.setState({ isLoading: false });
+      try {
+        const canvas = await html2canvas(this.chartRef.current.parentElement, {
+          ...options,
+        });
+
         return canvas.toDataURL('image/png', 1.0);
-      });
+      } finally {
+        this.setState({ isLoading: false });
+      }
     }
   };
 
