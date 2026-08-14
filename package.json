@@ -13,7 +13,6 @@
     "url": "https://github.com/brammitch/recharts-to-png/issues"
   },
   "workspaces": [
-    "examples/next",
     "lib"
   ],
   "files": [
@@ -39,12 +38,13 @@
     "build": "npm run clean && npm run build -w lib",
     "clean": "rimraf dist",
     "coverage": "npm run coverage -w lib",
-    "demo": "npm run dev -w examples/next",
+    "demo": "npm --prefix examples/next run dev",
     "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix",
     "postversion": "git push && git push --tags",
+    "predemo": "npm --prefix examples/next install",
     "prepare": "husky install",
     "release": "npm run build && commit-and-tag-version",
     "test": "npm run test -w lib",
