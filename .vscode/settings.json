@@ -23,7 +23,7 @@
       "mode": "auto"
     }
   ],
-  "javascript.format.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.format.enabled": false,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "workbench.settings.editor": "json"
 }
