@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/brammitch/recharts-to-png.git"
   },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/brammitch/recharts-to-png/issues"
   },
@@ -39,8 +43,8 @@
     "clean": "rimraf dist",
     "coverage": "npm run coverage -w lib",
     "demo": "npm --prefix examples/next run dev",
-    "format:check": "prettier --check \"./**/*.{ts,tsx,js,json}\"",
-    "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json}\"",
+    "format:check": "prettier --check \"./**/*.{ts,tsx,js,json,yml,yaml}\"",
+    "format:fix": "prettier --write \"./**/*.{ts,tsx,js,json,yml,yaml}\"",
     "lint:check": "eslint . --ext .js,.ts,.tsx --color",
     "lint:fix": "eslint . --ext .js,.ts,.tsx --color --fix",
     "postversion": "git push && git push --tags",
