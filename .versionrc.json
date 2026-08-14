@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "posttag": "git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)"
+  }
+}
