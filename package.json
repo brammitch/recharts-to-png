@@ -1,7 +1,7 @@
 {
   "name": "recharts-to-png",
   "version": "3.0.1",
-  "description": "This package converts a Recharts chart to a png.",
+  "description": "This package converts any HTML element to an image.",
   "author": "Brandon M. Mitchell",
   "license": "MIT",
   "homepage": "https://recharts-to-png.netlify.app",
@@ -19,6 +19,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
