@@ -260,3 +260,9 @@ export default class RenderPropsExample extends React.Component<CurrentPngProps,
    ```
    npm run test
    ```
+
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) and require
+a scope of `lib`, `deps`, `release`, or `other` (e.g. `fix(lib): ...`). Git hooks format staged
+files on commit and run the tests on push.
+
+Maintainers: see [MAINTAINING.md](MAINTAINING.md) for the release process and CI details.
