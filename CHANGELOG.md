@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [3.0.2](https://github.com/brammitch/recharts-to-png/compare/v3.0.1...v3.0.2) (2026-08-15)
+
+
+### Bug Fixes
+
+* **lib:** :bug: setIsLoading(false) never fires if html2canvas rejects ([4446817](https://github.com/brammitch/recharts-to-png/commit/4446817d0f4b5095cf492ab76e3e823605b5a198))
+* **lib:** :wrench: do not ship empty source map ([cf11439](https://github.com/brammitch/recharts-to-png/commit/cf1143905e86b1f1f79d142862a93194d5ac2566))
+* **lib:** :wrench: exclude test declarations files from being included in build ([a10cc65](https://github.com/brammitch/recharts-to-png/commit/a10cc6516e35ca0e16cfb5d6c3023f29274ad141))
+* **other:** :bug: command to start demo app ([6f77fb3](https://github.com/brammitch/recharts-to-png/commit/6f77fb35eb91542fce320606708b872e6b76eee0))
+* **other:** :rotating_light: repair lint config and give examples/next a dedicated eslintrc ([e450dcb](https://github.com/brammitch/recharts-to-png/commit/e450dcb783513e9d8dade1f18594255e5f16effb))
+* **other:** :wrench: eslint config for next ([b9e1996](https://github.com/brammitch/recharts-to-png/commit/b9e1996d2ac336014314d7f37a2d248ff5697a0d))
+
 ### [3.0.1](https://github.com/brammitch/recharts-to-png/compare/v3.0.0...v3.0.1) (2025-06-23)
 
 
