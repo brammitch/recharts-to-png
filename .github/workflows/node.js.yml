@@ -13,6 +13,22 @@ on:
     branches: ['main']
 
 jobs:
+  # Formatting and linting are node-version independent, so they run once
+  # rather than repeating across the build matrix.
+  quality:
+    runs-on: ubuntu-latest
+    name: Lint and format
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: true
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint:check
+
   build:
     runs-on: ubuntu-latest
     strategy:
