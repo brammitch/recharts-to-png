@@ -7,3 +7,5 @@ updates:
     assignees:
       - 'brammitch'
     open-pull-requests-limit: 0
+    allow:
+      - dependency-type: 'production'
